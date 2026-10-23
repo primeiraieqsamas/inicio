@@ -1337,7 +1337,7 @@ footer p{line-height:1.7;}
 
       <div class="map-frame">
         <iframe id="mapaIgreja" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Rua+Prefeito+Jos%C3%A9+Zampier+Filho%2C+846+-+Jardim+Dona+Herm%C3%ADnia%2C+S%C3%A3o+Mateus+do+Sul+-+PR&output=embed">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1664.906323498145!2d-50.393210474696616!3d-25.868865625877806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e7a2dad8304221%3A0x7ee5676e94b75fe5!2sIgreja%20do%20Evangelho%20Quadrangular!5e1!3m2!1spt-BR!2sbr!4v1792798812012!5m2!1spt-BR!2sbr">
         </iframe>
       </div>
 
@@ -1533,11 +1533,13 @@ footer p{line-height:1.7;}
     trackingUrl: "https://script.google.com/macros/s/AKfycbwJBxJ5ysBoL44PttfdnWK7DzlXO6J8rT8TNPdKuim98hCVoru85YirGEURvwhFTTo/exec"
   };
 
+  // Coordenadas do marcador do estabelecimento no Google Maps.
+  const DESTINO_COORDENADAS = "-25.8687944,-50.3924302";
   const ENDERECO = "Rua Prefeito José Zampier Filho, 846, Jardim Dona Hermínia, São Mateus do Sul, PR, Brasil";
-  const ENC = encodeURIComponent(ENDERECO);
+  const ENC = encodeURIComponent(DESTINO_COORDENADAS);
 
   const urlGoogle = `https://www.google.com/maps/dir/?api=1&destination=${ENC}`;
-  const urlWaze   = `https://waze.com/ul?q=${ENC}&navigate=yes`;
+  const urlWaze   = `https://waze.com/ul?ll=${ENC}&navigate=yes`;
   const urlApple  = `https://maps.apple.com/?daddr=${ENC}`;
 
   document.getElementById('lnkGoogle').href = urlGoogle;
