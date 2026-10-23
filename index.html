@@ -1139,6 +1139,22 @@ footer p{line-height:1.7;}
             mask-image:linear-gradient(180deg,transparent 0%,transparent 20%,#000 54%);
   }
 </style>
+<style>
+  /* Pontos da linha do tempo: todos na mesma cor (azul).
+     Para trocar a cor de todos de uma vez, mude só --timeline-dot. */
+  .timeline{--timeline-dot:var(--accent-2);}
+  .timeline .t-item .timeline-dot,
+  .timeline .t-item.night .timeline-dot,
+  .timeline .t-item.is-next .timeline-dot,
+  .timeline .t-item.is-current .timeline-dot{
+    background:var(--timeline-dot) !important;
+    box-shadow:0 0 0 5px rgba(30,143,184,.12),0 0 18px rgba(30,143,184,.30) !important;
+  }
+  /* o próximo encontro continua com um anel ao redor, mas na mesma cor */
+  .timeline .t-item.is-next .timeline-dot{
+    box-shadow:0 0 0 2px var(--timeline-dot),0 0 0 5px var(--bg-soft),0 0 18px rgba(30,143,184,.30) !important;
+  }
+</style>
 </head>
 <body>
 
